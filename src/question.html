@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+@@include('components/page-blocks/_head.html',{
+"lang":"ru",
+"title":"Question Page",
+"description":"",
+"keywords":"",
+"favicon":"img/favicons/favicon",
+})
+
+<body>
+	@@include('components/page-blocks/_header.html')
+	<div class="question">
+		<div class="container">
+			<div class="question__block">
+				<div class="question__text">
+					<h1 class="question__title text-center m-auto">
+						Сайт предназначен только для медицинских и фармацевтических работников. <br>
+						Ответьте, пожалуйста, на несколько вопросов
+					</h1>
+					<h2 class="question__subtitle text-center m-auto">Какой тип наследования болезни Вильсона существует?</h2>
+				</div>
+				<div class="question__button">
+					<span><a class="question__btn-error">Аутосомно-доминантный</a></span>
+					<span><a class="question__btn-error">Сцепленный с Х-хромосомой доминантно</a></span>
+					<span><a class="question__btn_good">Аутосомно-рецессивный</a> </span>
+					<span><a class="question__btn-error">Сцепленный с Х-хромосомой рецессивно</a></span>
+					<span><a class="question__btn-error">Полигенный</a> </span>
+				</div>
+			</div>
+		</div>
+		<div class="question__popup">
+			<div class="popup__block text-center">
+				<h2>Материалы сайта предназначены <br>
+					только для медицинских и фармацевтических <br>
+					работников</h2>
+					<h3>Попробуйте еще раз</h3>
+					<button class="question__refresh">Пройти еще раз</button>
+			</div>
+		</div>
+	</div>
+	@@include('components/page-blocks/_footer_quesion.html')
+	@@include('components/page-blocks/_scripts.html')
+</body>
+
+</html>

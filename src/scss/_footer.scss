@@ -1,0 +1,286 @@
+.footer {
+    width: 100%;
+    background: #F7F7F7; 
+    padding: 15px 0 12px; 
+    margin-top: auto;
+    z-index: 200;
+    .footer__block{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .adress {
+            width: 100%;
+            max-width: 416px;
+            margin-bottom: 17px;
+            p {
+                color: $blue-active;
+                font-size: 11px;
+                line-height: 18px;
+                a {
+                    color: $blue-active ;
+                    text-decoration: none;
+                    font-family: $font-family-Regular;
+                    
+                }
+            }
+            a {
+                font-family: $font-family-bold;
+                color: $blue-active;
+                text-decoration: none; 
+                font-size: 11px;
+                line-height: 18px;
+            }
+        }
+        .mailing {
+            display: flex;
+            .text {
+                max-width: 200px;
+                margin-right: 12px;
+                margin-top: 5px;
+                p  {
+                    color: #9C9C9C;
+                    font-size: 11px;
+                    line-height: 18px;
+                }
+            }
+            .send-box {
+                padding-top: 3px;
+                
+                form {
+                    display: flex;
+                    margin-bottom: 3px;
+                    input {
+                        background: $text-white;
+                        border:none;
+                        max-width: 215px;
+                        width: 100%;
+                        height: 40px;
+                        padding: 12px 14px;
+                        font-size: 12px;
+                        line-height: 135%;
+                        display: flex;
+                        align-items: center;
+                        color: #9C9C9C;
+                        outline: 0;
+                        &::placeholder {
+                            color: #9C9C9C;
+                        }
+                    }
+                    button {
+                        border: none;
+                        background: $blue-active;
+                        max-width: 95px;
+                        width: 100%;
+                        height: 40px;
+                        color: $text-white;
+                        font-size: 12px;
+                        line-height: 135%;
+                        &:hover {
+                            @include shadow-hover-btn;
+                            @include shadow-active-btn;
+                        }
+                    }
+                }
+                p {
+                    font-family: $font-family-Light;
+                    font-size: 8px;
+                    line-height: 10px;
+                    color: #97A3AC;
+                    a {
+                        color: #97A3AC;
+                        text-decoration: none; 
+                    }
+                }
+            }
+
+        }
+        .copy {
+            margin-left: auto;
+            font-family: $font-family-bold;
+            font-size: 11px;
+            line-height: 16px;
+            letter-spacing: 0.02em;
+            color: $text-supportive;
+        }
+        .standart {
+            color: $text-supportive;
+            font-family: $font-family-Light;
+            font-size: 11px;
+            line-height: 10px;
+            margin-right: 100px;
+        }
+        .dev {
+            color: #9C9C9C;
+            font-family: $font-family-Light;
+            font-size: 11px;
+            line-height: 18px;
+        }
+        .policy {
+            color: $text-supportive;
+            text-decoration: underline;
+            font-size: 11px;
+            line-height: 10px;
+        }
+
+    }
+    .footer__info {
+        display: flex;
+        justify-content: space-between;
+        .standart {
+            color: $text-supportive;
+            font-family: $font-family-Light;
+            font-size: 11px;
+            line-height: 10px;
+        }
+        .dev {
+            color: #9C9C9C;
+            font-family: $font-family-Light;
+            font-size: 11px;
+            line-height: 18px;
+        }
+        .policy {
+            color: $text-supportive;
+            text-decoration: underline;
+            font-size: 11px;
+            line-height: 10px;
+        }
+    }
+}
+
+
+
+//footer 
+
+@media (max-width:1200px) {
+    .footer .footer__block .copy, .footer .footer__block .standart {
+        margin: 0 auto 10px;
+        text-align: center;
+    }
+    .footer .footer__block .dev, .footer .footer__block .policy {
+        display: none;
+    }
+    .footer .footer__block .mailing .send-box p a {
+        text-decoration: underline;
+    }
+}
+@media (max-width:990px) {
+    .footer .footer__block .adress {
+        max-width: 100%;
+        text-align: center;
+    }
+    .footer .footer__block .mailing {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 10px;
+        .text {
+            margin: 0;
+            margin-bottom: 5px;
+            max-width: 250px;
+            p {
+                font-size: 12px;
+                line-height: 15px;
+                color: $text-supportive;
+            }
+        }
+    }
+    .footer .footer__block .copy, .footer .footer__block .standart {
+        color: $text-main;
+        font-family: $font-family-bold;
+    }
+}
+@media (max-width:767px) {
+    .footer .footer__block .adress {
+        display: none;
+    }
+    .footer .footer__block .copy, .footer .footer__block .standart {
+        margin: 0 0 10px;
+        display: flex; align-items: center;
+    }
+    .footer .footer__block .mailing .send-box form input {
+        max-width: 250px;
+    }
+    .footer-main {
+        background: #202F4E;
+        color: $text-white;
+        .footer__block .mailing  {
+            order: 1;
+            .text {
+            
+                p {
+                    color: $text-white;
+                    margin-bottom: 18px;
+                }
+            }
+            .send-box {
+                form {
+                    display: block;
+                    input {
+                        margin: 0 auto 15px;
+                        max-width: 280px;
+                    }
+                    button {
+                        border-radius: 0 10px 10px 10px;
+                        min-width: 140px;
+                        margin-bottom: 20px;
+                    }
+                }
+                p {
+                    max-width: 280px;
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+                margin-bottom: 37px;
+            }
+        }
+        .footer__block .policy {
+            order: 2;
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            line-height: 10px;
+            text-align: center;
+            letter-spacing: -0.01em;
+            color: #97A3AC;
+            font-family: $font-family-Light;
+            margin-bottom: 23px;
+        }
+        .footer__block .copy {
+            order: 4;
+            color: #FFFFFF;
+            font-size: 11px;
+            line-height: 16px;
+            letter-spacing: 0.02em;
+
+        }
+        .footer__block .standart {
+            order: 5;
+            color: #FFFFFF;
+            font-size: 11px;
+            line-height: 16px;
+            letter-spacing: 0.02em;
+            justify-content: end;
+        }
+        .footer__block .dev {
+            order: 3;
+            display: block;
+            text-align: center;
+            width: 100%;
+           margin-bottom: 15px;
+            p {
+                font-family: $font-family-Light;
+                font-size: 10px;
+                line-height: 13px;
+                text-align: center;
+                color: #9C9C9C;
+                max-width: 311px;
+                margin: 0 auto;
+            }
+        }
+    }
+} 
+

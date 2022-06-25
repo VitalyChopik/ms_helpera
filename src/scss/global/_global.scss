@@ -1,0 +1,293 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.flex {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.--just-space {
+	justify-content: space-between;
+}
+
+.--just-center {
+	justify-content: center;
+}
+
+.--just-end {
+	justify-content: flex-end;
+}
+
+.--align-str {
+	align-items: stretch;
+}
+
+.--align-center {
+	align-items: center;
+}
+
+.--align-end {
+	align-items: flex-end;
+}
+
+.--dir-col {
+	flex-direction: column;
+}
+
+html {
+	font-size: 16px;
+}
+
+html,
+body {
+	min-height: 100%;
+	position: relative;
+}
+
+body {
+	font-size: 1rem;
+	background: #F2F8FD;
+}
+
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+//цвета состояний (фоны)
+$cyan-normal: #5379F9;
+$cyan-hover: #436AEC;
+$cyan-active: #5379F9;
+$orange-normal:#E74A21;
+$orange-hover: #D03911;
+$orange-active: #D03911;
+$blue-normal: #0460A9;
+$blue-hover: #033E6D;
+$blue-active: #0460A9;
+$darkblue-normal: #202F4E;
+$darkblue-hover: #30446C;
+$darkblue-active: #202F4E;
+$turquoise-normal:#C4EBEE;
+$turquoise-hover:#9EDFE4;
+$turquoise-active:#C4EBEE;
+//основные цвета
+$disable:#B5BFC8;
+$text-white: #ffffff;
+$text-main: #202F4E;
+$text-additional: #5379F9;
+$text-supportive: #0460A9;
+
+//fonts 
+$font-family-bold: Circe-Bold, sans-serif;
+$font-family-ExtraBold: Circe-ExtraBold, sans-serif;
+$font-family-Light: Circe-Light, sans-serif;
+$font-family-Regular: Circe-Regular, sans-serif;
+$font-family-ExtraLight: Circe-ExtraLight, sans-serif;
+$font-family-Thin: Circe-Thin, sans-serif;
+
+$border-radius-10:10px;
+@mixin shadow-hover-btn {
+    filter: drop-shadow(0px 4px 15px rgba(3, 62, 109, 0.25));
+}
+@mixin shadow-active-btn {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//миксины кнопок 
+@mixin btn-contined {
+    border:none;
+    border-radius: 0 0 $border-radius-10 $border-radius-10;
+    background: $cyan-normal;
+    @include flex-center;
+    text-decoration: none;
+    color: $text-white;
+    &:hover {
+        background: $cyan-hover;
+        filter: drop-shadow(0px 4px 10px rgba(83, 121, 249, 0.25));
+        text-decoration: none;
+        color: $text-white;
+    }
+    &:active {
+        background: $cyan-active;
+        @include shadow-active-btn;
+        text-decoration: none;
+        color: $text-white;
+    }
+}
+@mixin btn-again {
+    border:none;
+    border-radius: 0 0 $border-radius-10 $border-radius-10;
+    background: $blue-normal;
+    @include flex-center;
+    text-decoration: none;
+    color: $text-white;
+    &:hover {
+        background: $blue-hover;
+        filter: drop-shadow(0px 4px 15px rgba(9, 106, 178, 0.25));
+        text-decoration: none;
+        color: $text-white;
+    }
+    &:active {
+        background: $blue-active;
+        @include shadow-active-btn;
+        text-decoration: none;
+        color: $text-white;
+    }
+}
+@mixin btn-remember {
+    border:none;
+    border-radius: 0 $border-radius-10 $border-radius-10 $border-radius-10;
+    background: $orange-normal;
+    @include flex-center;
+    text-decoration: none;
+    color: $text-white;
+    &:hover {
+        background: $orange-hover;
+        filter: drop-shadow(0px 4px 10px rgba(160, 16, 16, 0.3));
+        text-decoration: none;
+        color: $text-white;
+    }
+    &:active {
+        background: $orange-active;
+        @include shadow-active-btn;
+        text-decoration: none;
+        color: $text-white;
+    }
+}
+@mixin btn-done-blue {
+    border:none;
+    border-radius: 0 0 $border-radius-10 $border-radius-10;
+    background: #0460A9;
+    @include flex-center;
+    text-decoration: none;
+    color: $text-white;
+    &:hover {
+        background: #033E6D;
+        filter: drop-shadow(0px 4px 15px rgba(3, 62, 109, 0.25));
+        text-decoration: none;
+        color: $text-white;
+    }
+    &:active {
+        background: #0460A9;
+        @include shadow-active-btn;
+        text-decoration: none;
+        color: $text-white;
+    }
+}
+@mixin btn-done-orange {
+    border:none;
+    border-radius: 0 0 $border-radius-10 $border-radius-10;
+    background: $orange-normal;
+    @include flex-center;
+    text-decoration: none;
+    color: $text-white;
+    &:hover {
+        background: $orange-hover;
+        filter: drop-shadow(0px 4px 15px rgba(231, 74, 33, 0.25));
+        text-decoration: none;
+        color: $text-white;
+    }
+    &:active {
+        background: $orange-active;
+        @include shadow-active-btn;
+        text-decoration: none;
+        color: $text-white;
+    }
+}
+@mixin btn-up {
+    border:none;
+    border-radius: 0 0 $border-radius-10 $border-radius-10;
+    background: $darkblue-normal;
+    @include flex-center;
+    text-decoration: none;
+    color: $text-white;
+    &:hover {
+        background: $darkblue-hover;
+        filter: drop-shadow(0px 4px 15px rgba(231, 74, 33, 0.25));
+        text-decoration: none;
+        color: $text-white;
+    }
+    &:active {
+        background: $darkblue-active;
+        @include shadow-active-btn;
+        text-decoration: none;
+        color: $text-white;
+    }
+}
+@mixin btn-search-blue {
+    border:none;
+    border-radius: 0 0 $border-radius-10 0;
+    background: #0460A9;
+    @include flex-center;
+    text-decoration: none;
+    color: $text-white;
+    &:hover {
+        background: #054C84;
+        filter: drop-shadow(0px 4px 15px rgba(5, 76, 132, 0.25));
+        text-decoration: none;
+        color: $text-white;
+    }
+    &:active {
+        background: #0460A9;
+        @include shadow-active-btn;
+        text-decoration: none;
+        color: $text-white;
+    }
+}
+@mixin btn-search-orange {
+    border:none;
+    border-radius: 0 0 $border-radius-10 0;
+    background: $orange-normal;
+    @include flex-center;
+    &:hover {
+        background: $orange-hover;
+        filter: drop-shadow(0px 4px 15px rgba(231, 74, 33, 0.25));
+        text-decoration: none;
+        color: $text-white;
+    }
+    &:active {
+        background: $orange-active;
+        @include shadow-active-btn;
+        text-decoration: none;
+        color: $text-white;
+    }
+}
+@mixin btn-rec {
+    border:none;
+    border-radius: 0 0 $border-radius-10 $border-radius-10;
+    background: $turquoise-normal;
+    @include flex-center;
+    text-decoration: none;
+    color: $text-white;
+    &:hover {
+        background: $turquoise-hover;
+        filter: drop-shadow(0px 4px 15px rgba(158, 223, 228, 0.25));
+        text-decoration: none;
+        color: $text-white;
+    }
+    &:active {
+        background: $turquoise-active;
+        @include shadow-active-btn;
+        text-decoration: none;
+        color: $text-white;
+    }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+@@include('components/page-blocks/_head.html',{
+"lang":"ru",
+"title":"Страница поиска",
+"description":"",
+"keywords":"",
+"favicon":"img/favicons/favicon",
+})
+
+<body>
+	@@include('components/page-blocks/_header_search.html')
+    <div class="search__page">
+        <div class="search__form m-auto">
+            <h1>Поиск по сайту</h1>
+            <form action="#" class="page-header__search">
+                <span class="back"><img src="img/icon/search-arrow-blue.svg" alt=""></span>
+                <input type="text" placeholder="Поиск по новостям">
+                <span class="reset"><img src="img/icon/filter__close.svg" alt=""></span>
+                <button type="submit">Найти</button>
+                
+            </form>
+            <p>Найдено: <span>22</span></p>
+        </div>
+        <div class="search__result">
+            <div class="container">
+                <div class="search__posts">
+                    <div class="search__post">
+                        <div class="box">
+                            <a href="single-news.html" class="title">Рассеянный склероз: результаты последних исследований</a>
+                            <a href="single-news.html" class="excerpt">Хотя в разговорной речи «склерозом» часто называют <span>нарушение</span> памяти в пожилом возрасте, название «<span>рассеянный</span> склероз» не имеет отношения ни к старческому «склерозу», ни к рассеянности внимания.</a>    
+                        </div>
+                        <div class="search__post-footer d-flex">
+                            <span class="date">31 декабря 2022 г.</span>
+                            <a href="#" class="theme">theme</a>
+                        </div>
+                    </div>
+                    <div class="search__post">
+                        <div class="box">
+                            <a href="single-news.html" class="title">Рассеянный склероз: результаты последних исследований</a>
+                            <a href="single-news.html" class="excerpt">Хотя в разговорной речи «склерозом» часто называют <span>нарушение</span> памяти в пожилом возрасте, название «<span>рассеянный</span> склероз» не имеет отношения ни к старческому «склерозу», ни к рассеянности внимания.</a>    
+                        </div>
+                    </div>
+                    <div class="search__post">
+                        <div class="box">
+                            <a href="single-news.html" class="title">Рассеянный склероз: результаты последних исследований</a>
+                            <a href="single-news.html" class="excerpt">Хотя в разговорной речи «склерозом» часто называют <span>нарушение</span> памяти в пожилом возрасте, название «<span>рассеянный</span> склероз» не имеет отношения ни к старческому «склерозу», ни к рассеянности внимания.</a>    
+                        </div>
+                    </div>
+                    <div class="search__post">
+                        <div class="box">
+                            <a href="single-news.html" class="title">Рассеянный склероз: результаты последних исследований</a>
+                            <a href="single-news.html" class="excerpt">Хотя в разговорной речи «склерозом» часто называют <span>нарушение</span> памяти в пожилом возрасте, название «<span>рассеянный</span> склероз» не имеет отношения ни к старческому «склерозу», ни к рассеянности внимания.</a>    
+                        </div>
+                    </div>
+                    <div class="search__post">
+                        <div class="box">
+                            <a href="single-news.html" class="title">Рассеянный склероз: результаты последних исследований</a>
+                            <a href="single-news.html" class="excerpt">Хотя в разговорной речи «склерозом» часто называют <span>нарушение</span> памяти в пожилом возрасте, название «<span>рассеянный</span> склероз» не имеет отношения ни к старческому «склерозу», ни к рассеянности внимания.</a>    
+                        </div>
+                    </div>
+                    <div class="search__post">
+                        <div class="box">
+                            <a href="single-news.html" class="title">Рассеянный склероз: результаты последних исследований</a>
+                            <a href="single-news.html" class="excerpt">Хотя в разговорной речи «склерозом» часто называют <span>нарушение</span> памяти в пожилом возрасте, название «<span>рассеянный</span> склероз» не имеет отношения ни к старческому «склерозу», ни к рассеянности внимания.</a>    
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="pagination__block ">
+            <div class="container d-flex">
+                <nav class="navigation pagination " role="navigation">
+                    <div class="nav-links d-flex">
+                        <a class="prev page-numbers" href="#">Предыдущая страница</a>
+                        <a class="page-numbers" href="#">1</a>
+                        <span class="page-numbers current">2</span>
+                        <a class="page-numbers" href="#">3</a>
+                        <a class="next page-numbers" href="#">Следующая страница</a>
+                    </div>
+                </nav>
+                <a  href="#" class="top__up">Наверх</a>
+            </div>
+        </div>
+
+        <!-- если нет результата -->
+
+        <!-- <div class="noresult">
+            <p class="text-center">По вашему запросу ничего не найдено</p>
+            <h2 class="text-center">Вам может быть интересно</h2>
+            <div class="container">
+
+                <div class="noresult__posts">
+                    <div class="cases-posts d-flex">
+                        <section class="home__cases-post">
+                            <div class="box-body">
+                                <div class="box-img">
+                                    <div class="circle-img"><img src="img/home/cases.png" alt=""></div>
+                                </div>
+                                <div class="box-text">
+                                    <a href="#" class="title">Эндокринная офтальмопатия в неврологической практике</a>
+                                    <a href="#" class="excerpt">Женщина, 64 года, направлена
+                                        врачом-неврологом на госпитализацию из поликлиники по месту жительства 
+                                        с диагнозом «невропатия глазодвигательн...</a>	
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <time class="date">26 января, 2021 г.</time>
+                                <a href="#" class="link">Видео</a>
+                                <a href="#" class="tag">Рассеянный склероз</a>
+                            </div>
+                        </section>
+                        <section class="home__cases-post">
+                            <div class="box-body">
+                                <div class="box-img">
+                                    <div class="circle-img"><img src="img/home/cases.png" alt=""></div>
+                                    
+                                </div>
+                                <div class="box-text">
+                                    <a href="#" class="title">Эндокринная офтальмопатия в неврологической практике</a>
+                                    <a href="#" class="excerpt">Женщина, 64 года, направлена
+                                        врачом-неврологом на госпитализацию из поликлиники по месту жительства 
+                                        с диагнозом «невропатия глазодвигательн...</a>	
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <time class="date">26 января, 2021 г.</time>
+                                <a href="#" class="link">Видео</a>
+                                <a href="#" class="tag">Рассеянный склероз</a>
+                            </div>
+                        </section>
+                        <section class="home__cases-post">
+                            <div class="box-body">
+                                <div class="box-img">
+                                    <div class="circle-img"><img src="img/home/cases.png" alt=""></div>
+                                </div>
+                                <div class="box-text">
+                                    <a href="#" class="title">Эндокринная офтальмопатия в неврологической практике</a>
+                                    <a href="#" class="excerpt">Женщина, 64 года, направлена
+                                        врачом-неврологом на госпитализацию из поликлиники по месту жительства 
+                                        с диагнозом «невропатия глазодвигательн...</a>	
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <time class="date">26 января, 2021 г.</time>
+                                <a href="#" class="link">Видео</a>
+                                <a href="#" class="tag">Рассеянный склероз</a>
+                            </div>
+                        </section>
+                    </div>
+  
+                </div>
+            </div>
+            <div class="img-mobile">
+                <img src="img/icon/noresult.svg" alt="">
+            </div>
+        </div> -->
+    </div>
+	@@include('components/page-blocks/_footer_quesion.html')
+	@@include('components/page-blocks/_scripts.html')
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+@@include('components/page-blocks/_head.html',{
+"lang":"ru",
+"title":"Страница не найдена",
+"description":"",
+"keywords":"",
+"favicon":"img/favicons/favicon",
+})
+
+<body>
+	@@include('components/page-blocks/_header.html')
+	<div class="error-page">
+		<div class="error__block">
+			<img src="img/404.svg" alt="">
+			<h1>Ой, кажется эта страница не существует</h1>
+			<h2>Но вы можете вернуться <a href="#">на главную</a></h2>
+			<a href="/" class="home__btn">На главную страницу</a>
+		</div>
+	</div>
+	@@include('components/page-blocks/_footer_quesion.html')
+	@@include('components/page-blocks/_scripts.html')
+</body>
+
+</html>

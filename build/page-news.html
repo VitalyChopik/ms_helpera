@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+				content="">
+	<meta name="keywords"
+				content="">
+	<link rel="shortcut icon"
+				href="img/favicons/favicon.svg"
+				type="image/svg+xml">
+	<link rel="shortcut icon"
+				href="img/favicons/favicon.webp"
+				type="image/webp">
+	<link rel="shortcut icon"
+				href="img/favicons/favicon.png"
+				type="image/x-icon">
+				<link rel="stylesheet"
+				href="css/slick.css">
+	<link rel="stylesheet"
+				href="css/libs.min.css">
+	<link rel="stylesheet"
+				href="css/style.min.css">
+
+	<title>news Page</title>
+</head>
+
+
+<body>
+	<header class="header header__main">
+    <div class="container">
+        <div class="navmenu">
+            <div class="brand">
+                <a href="/index.html"><img src="/img/logo/logo.svg" alt=""></a>
+            </div>
+            <div class="logo"><a href="/front-page.html"><img src="/img/logo/logo-main.svg" alt=""></a></div>
+            <div class="header__link-back">
+                <a href="/front-page.html" class="link-back">←  Вернуться назад</a>
+            </div>
+            <div class="navbar">
+                <nav>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="page-articles.html" class="nav-link">Рассеянный склероз</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Клинические случаи</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Мероприятия</a></li>
+                        <li class="nav-item"><a href="page-helper.html" class="nav-link">Полезные материалы</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Карта клиник</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="search">
+                <a href="page-search.html" class="search-btn">
+                    <button type="submit"><img src="../../img/icon/search.svg" alt=""></button>
+                    <span>Поиск по сайту</span>
+                </a>
+            </div>
+            <div class="menu__burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div class="news-header">
+        <div class="container">
+            <div class="page-header__block">
+                <a href="/front-page.html" class="link-back">←  Вернуться назад</a>
+                <h1 class="page-header__title">Новости <span> (55)</span></h1>
+                <div class="page-header__box d-flex">
+                    <div class="btn-open-search">Найти новость</div>
+                    <form action="#" class="page-header__search">
+                        <span class="back"><img src="img/icon/search-arrow-blue.svg" alt=""></span>
+                        <input type="text" placeholder="Поиск по новостям">
+                        <span class="reset"><img src="img/icon/filter__close.svg" alt=""></span>
+                        <button  type="submit">Найти</button>
+                    </form>
+                    <div class="page-header__filter ">
+                        <span class="filter__btn">Фильтры</span>
+                        <div class="filter__count"></div>
+                        <div class="filter__modal">
+                            <div class="filter__header d-flex">
+                                <h3>Фильтрация списка новостей</h3>
+                                <span class="filter__close">
+                                    <svg width="9" height="9" viewBox="0 0 9 9"  xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.36067 0.110636L4.7582 3.71311C4.61068 3.86063 4.37707 3.86063 4.2418 3.71311L0.639327 0.110636C0.491812 -0.0368788 0.2582 -0.0368788 0.122932 0.110636C-0.0245837 0.258152 -0.0245837 0.491764 0.122932 0.627032L3.72541 4.22951C3.87292 4.37702 3.87292 4.61063 3.72541 4.7459L0.110636 8.36067C-0.0368788 8.50819 -0.0368788 8.7418 0.110636 8.87707C0.258152 9.02458 0.491764 9.02458 0.627032 8.87707L4.22951 5.27459C4.37702 5.12708 4.61063 5.12708 4.7459 5.27459L8.36067 8.88936C8.50819 9.03688 8.7418 9.03688 8.87707 8.88936C9.02458 8.74185 9.02458 8.50824 8.87707 8.37297L5.28689 4.7582C5.13937 4.61068 5.13937 4.37707 5.28689 4.2418L8.88936 0.639327C9.03688 0.491812 9.03688 0.2582 8.88936 0.122932C8.74185 -0.0246694 8.50824 -0.0246694 8.36072 0.110582L8.36067 0.110636Z" fill="#202F4E"/>
+                                        </svg>                                        
+                                </span>
+                            </div>
+                            <form class="filter__body d-flex" action="#">
+                                <h4>Дата публикации</h4>
+                                <div class="calendar">
+                                    <img src="img/icon/calendar.png" alt="">
+                                </div>
+                                <div class="filter__block">
+                                    <div class="category__list d-flex">
+                                        <h4 class="w-100">Категория</h4>
+                                        <div class="filter__box box"><label><input type="checkbox"><span>Covid-19</span></label></div>
+                                        <div class="filter__box  box"><label><input type="checkbox"><span>Novartis</span> </label></div>
+                                        <div class="filter__box box"><label><input type="checkbox"><span>Исследования</span></label></div>
+                                        <div class="filter__box  box"><label><input type="checkbox"><span>Операции</span></label></div>
+                                        <div class="filter__box  box"><label><input type="checkbox"><span>Технологии</span></label></div>
+                                    </div>
+                                    <div class="block__btn d-flex">
+                                        <button type="submit" class="btn__submit">
+                                            Применить
+                                        </button>
+                                        <button type="button" class="btn__close">
+                                            Отмена
+                                        </button>
+                                        <button type="reset" class="btn__reset">
+                                            Сбросить все
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <span class="post__count">Найдено: <span>55</span> </span>
+            </div>
+        </div>
+    </div>
+	<main class="main">
+        <div class="news__posts">
+            <div class="container">
+                <div class="news__posts__block">
+                    <div class="news__post">
+                        <div class="box-img">
+                            <div class="box-color w-100"></div>
+                            <img src="img/news/post-thumblnale.webp" alt="" class="w-100">
+                        </div>
+                        <div class="box-text">
+                            <div class="box-body">
+                                <a href="single-news.html" class="post__title">Острые инсульты, ассоциированные с COVID-19</a>
+                                <a href="single-news.html" class="excerpt">В настоящей статье обобщены опубликованные данные, касающиеся клиники и патогенеза острых инсультов при COVID-19</a>
+                            </div>
+                            <div class="box-footer">
+                                <a href="single-news.html" class="date">20 декабря 2021 г.</a>
+                                <a  href="tax-news.html" class="tax">Сovid-19</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news__post">
+                        <div class="box-img">
+                            <div class="box-color w-100"></div>
+                            <img src="img/news/post-thumblnale.webp" alt="" class="w-100">
+                        </div>
+                        <div class="box-text">
+                            <div class="box-body"><a href="single-news.html" class="post__title">Острые инсульты, ассоциированные с COVID-19</a><a href="single-news.html" class="excerpt">В настоящей статье обобщены опубликованные данные, касающиеся клиники и патогенеза острых инсультов при COVID-19</a></div>
+                            <div class="box-footer">
+                                <a href="single-news.html" class="date">20 декабря 2021 г.</a>
+                                <a  href="tax-news.html" class="tax">Сovid-19</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inner--grid">
+                        <div class="news__post">
+                            <div class="box-img">
+                                <div class="box-color w-100"></div>
+                                <img src="img/news/post-thumblnale.webp" alt="" class="w-100">
+                                <a href="single-news.html" class="post__title">Острые инсульты, ассоциированные с COVID-19</a>
+                            </div>
+                            <div class="box-text">
+                                <div class="box-body"><a href="single-news.html" class="post__title">Острые инсульты, ассоциированные с COVID-19</a><a href="single-news.html" class="excerpt">В настоящей статье обобщены опубликованные данные, касающиеся клиники и патогенеза острых инсультов при COVID-19</a></div>
+                                <div class="box-footer">
+                                    <a href="single-news.html" class="date">20 декабря 2021 г.</a>
+                                    <a  href="tax-news.html" class="tax">Сovid-19</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news__post">
+                            <div class="box-img">
+                                <div class="box-color w-100"></div>
+                                <img src="img/news/post-thumblnale.webp" alt="" class="w-100">
+                                <a href="single-news.html" class="post__title">Острые инсульты, ассоциированные с COVID-19</a>
+                            </div>
+                            <div class="box-text">
+                                <div class="box-body"><a href="single-news.html" class="post__title">Острые инсульты, ассоциированные с COVID-19</a><a href="single-news.html" class="excerpt">В настоящей статье обобщены опубликованные данные, касающиеся клиники и патогенеза острых инсультов при COVID-19</a></div>
+                                <div class="box-footer">
+                                    <a href="single-news.html" class="date">20 декабря 2021 г.</a>
+                                    <a  href="tax-news.html" class="tax">Сovid-19</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news__post">
+                            <div class="box-img">
+                                <div class="box-color w-100"></div>
+                                <img src="img/news/post-thumblnale.webp" alt="" class="w-100">
+                                <a href="single-news.html" class="post__title">Острые инсульты, ассоциированные с COVID-19</a>
+                            </div>
+                            <div class="box-text">
+                                <div class="box-body"><a href="single-news.html" class="post__title">Острые инсульты, ассоциированные с COVID-19</a><a href="single-news.html" class="excerpt">В настоящей статье обобщены опубликованные данные, касающиеся клиники и патогенеза острых инсультов при COVID-19</a></div>
+                                <div class="box-footer">
+                                    <a href="single-news.html" class="date">20 декабря 2021 г.</a>
+                                    <a  href="tax-news.html" class="tax">Сovid-19</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news__post">
+                            <div class="box-img">
+                                <div class="box-color w-100"></div>
+                                <img src="img/news/post-thumblnale.webp" alt="" class="w-100">
+                                <a href="single-news.html" class="post__title">Острые инсульты, ассоциированные с COVID-19</a>
+                            </div>
+                            <div class="box-text">
+                                <div class="box-body"><a href="single-news.html" class="post__title">Острые инсульты, ассоциированные с COVID-19</a><a href="single-news.html" class="excerpt">В настоящей статье обобщены опубликованные данные, касающиеся клиники и патогенеза острых инсультов при COVID-19</a></div>
+                                <div class="box-footer">
+                                    <a href="single-news.html" class="date">20 декабря 2021 г.</a>
+                                    <a  href="tax-news.html" class="tax">Сovid-19</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news__post">
+                        <div class="box-img">
+                            <div class="box-color w-100"></div>
+                            <img src="img/news/post-thumblnale.webp" alt="" class="w-100">
+                        </div>
+                        <div class="box-text">
+                            <div class="box-body"><a href="single-news.html" class="post__title">Острые инсульты, ассоциированные с COVID-19</a><a href="single-news.html" class="excerpt">В настоящей статье обобщены опубликованные данные, касающиеся клиники и патогенеза острых инсультов при COVID-19</a></div>
+                            <div class="box-footer">
+                                <a href="single-news.html" class="date">20 декабря 2021 г.</a>
+                                <a  href="tax-news.html" class="tax">Сovid-19</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="pagination__block ">
+            <div class="container d-flex">
+                <nav class="navigation pagination " role="navigation">
+                    <div class="nav-links d-flex">
+                        <a class="prev page-numbers" href="#">Предыдущая страница</a>
+                        <a class="page-numbers" href="#">1</a>
+                        <span class="page-numbers current">2</span>
+                        <a class="page-numbers" href="#">3</a>
+                        <a class="next page-numbers" href="#">Следующая страница</a>
+                    </div>
+                </nav>
+                <a  href="#" class="top__up">Наверх</a> 
+            </div>
+        </div>
+	</main>
+	<footer class="footer footer-main">
+    <div class="container">
+        <div class="footer__block">
+            <div class="adress">
+               <p>
+                Юр. адрес: <br>   
+                ООО «Новартис Фарма», 125315, г. Москва, Ленинградский проспект, д. 70, <br>
+                Тел.: <a href="+74959671270">+7 (495) 967 12 70</a>, Факс: <a href="+74959671268">+7 (495) 967 12 68</a></p>
+                <a href="https://www.novartis.com/" class="website">www.novartis.com</a>
+            </div>
+            <div class="mailing">
+                <div class="text">
+                    <p>Получайте свежие новости и полезные материалы в нашей рассылке</p>
+                </div>
+                <div class="send-box">
+                    <form action="#">
+                        <input type="text" placeholder="Введите ваш e-mail">
+                        <button type="submit">Подписаться</button>
+                    </form>
+                    <p>Нажимая на кнопку «Подписаться» вы соглашаетесь с <a href="#">Политикой конфиденциальности</a></p>
+                </div>
+            </div>
+            <div class="copy">© Fibonacci Digital, 2022</div>
+            <div class="standart">437060/GenMed/WEB/04.22/0</div>
+            <div class="dev"><p>Сайт разработан при поддержке ООО “Новартис     Фарма” (в целях повышения осведомленности пользователей о заболевании рассеянный склероз)</p> </div>
+            <a href="#" class="policy">Политика конфиденциальности</a>
+
+        </div>
+
+
+    </div>
+</footer>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/libs.min.js"></script>
+<script src="js/main.min.js"></script>
+<script src="js/slick.min.js"></script>
+</body>
+
+</html>
