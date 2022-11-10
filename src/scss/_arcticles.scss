@@ -13,10 +13,14 @@
         line-height: 24px;
         color: #000000;
     }
+    .archive-link {
+        display: none;
+    }
     .page-header__title {
         font-size: 42px;
         line-height: 62px;
         color: #000000;
+        margin-bottom: 5px;
     }
     .page-header__subtitle {
         font-family: $font-family-Light;
@@ -39,7 +43,7 @@
             justify-content: center;
             z-index: 0;
             color: #FFFFFF;
-            padding: 148px 0 132px;
+            padding: 148px 30px 132px;
             .bg-img {
                 position: absolute;
                 left: 0;
@@ -70,9 +74,12 @@
         }
     }
 }
+
+
+
 @media (max-width: 768px) {
     .page-header__block.articles {
-        padding-top: 120px;
+        padding-top: 60px;
     }
     .articles__posts {
         .articles__posts__block {
@@ -94,6 +101,7 @@
         flex-direction: column;
         justify-content: start;
         align-items: start;
+        padding-top: 120px;
         .page-header__subtitle {
             font-size: 13px;
             line-height: 19px;
@@ -105,13 +113,26 @@
             }
         }
     }
+    .articles__posts .articles__posts__block .articles__post {
+        padding: 52px 0;
+    }
+    .articles__posts .articles__posts__block .articles__post .post-title {
+        width: 65%;
+        text-align: center;
+    }
 }
 
 
 //  Одиночная запись
-
+.single-post.articles  {
+    // background: none;
+    position: fixed;
+    width: 100%;
+}
 .single-header.articles {
+    padding-top: 100px;
     .single-header__block.articles {
+        padding-bottom: 30px;
         .subject, .author, .date, .resource {
             display: none;
         }
@@ -129,36 +150,51 @@
 }
 
 .single-post {
-    .tabs {
-        background: #E3F0F1;
-        .tabs__block {
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-
-            .tabs__link {
+    .kt-tabs-title-list {
+        position: relative;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around !important;
+        flex-wrap: nowrap !important;
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100vw;
+            background: #E3F0F1;
+            z-index: 0;
+        }
+        .kt-title-item {
+            height: 100%;
+            z-index: 1;
+            margin: 0 !important;
+            padding: 0 !important;
+            a {
+                margin: 0 !important;
+                padding: 0 !important;
                 height: 100%;
-                display: flex;
-                align-items: center;
-                width: max-content; 
-                padding-top: 5px;
-                font-size: 20px;
-                line-height: 18px;
-                color: #202F4E;
-                font-family: $font-family-Light;
-                &.active {
-                    border-bottom: 5px solid #202F4E;
+                span.kt-title-text {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    width: max-content; 
+                    padding-top: 5px;
+                    font-size: 20px;
+                    line-height: 18px;
+                    color: #202F4E;
+                    font-family: $font-family-Light;
                 }
             }
         }
     }
 }
 .single-post.articles-post{
-    background: #F8F9FB;
+    background: #ffffff;
     .post-content {
-        padding: 50px 0 90px;
+        padding: 0;
     }
+    
 }
 .recommendations {
     background: #E4F3FF;
@@ -219,12 +255,17 @@
 
 // мобильная версия одиночной записи
 @media (max-width:768px) {
+    .recommendations {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
     .single-header.articles {
         background-image: url(../img/articles/header-bg.webp);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
         padding-top: 60px;
+
          .single-header__block.articles {
             .link-back {
                 display: none;
@@ -247,59 +288,50 @@
     .single-post.articles-post {
         position: relative;
         background: #E3F0F1;
-        .tabs {
-            position: absolute;
+        .kt-tabs-title-list {
+            position: relative;
             top: -25px;
-            width: 100%;
-            background: none;
-            .tabs__block {
-                height: 30px;
+            min-height: 30px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between !important;
+            &::before {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                right: 0;
+                background: none;
                 border-bottom: 5px solid #ffffff;
-                justify-content: space-between;
-                .tabs__link {
-                    font-size: 12px;
-                    line-height: 18px;
-                    color: #000000;
-                    font-family: $font-family-Light;
-                    padding: 0 10px;
-                    text-align: center;
-                    &.active {
-                        font-family: $font-family-bold;
+            }
+            .kt-title-item {
+                margin: 0 !important;
+                padding: 0 !important;
+                margin-bottom: -5px !important;
+                height: 100%;
+                a {
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    height: 100%;
+                    span.kt-title-text {
                         font-size: 12px;
                         line-height: 18px;
-                        color: #F6404F;
-                        position: relative;
-                        border-bottom:none;
-                        
-                        &:after {
-                            content:"";
-                            position: absolute;
-                            background:#F6404F;
-                            bottom: -5px;
-                            z-index: 10;
-                            width: 100%;
-                            height: 5px;
-                            left: 0;
-                            right: 0;
-                        }
+                        color: #000000;
+                        font-family: $font-family-Light;
+                        padding: 0 10px;
+                        text-align: center;
                     }
                 }
             }
         }
+
         .post-content {
-            div {
-                background: #F8F9FB;
-                border: 0.5px solid #FFFFFF;
-                border-radius: 10px;
-                margin-bottom: 20px;
-                padding: 20px 7px 10px 12px;
-                h1, h2, h3, h4, h5, h6 {
-                    margin-bottom: 10px;
-                    color: $text-main;
-                }
+            h1, h2, h3, h4, h5, h6 {
+                font-family: $font-family-bold;
             }
             p {
-                color: #000000;
+                font-family: $font-family-Regular;
             }
         }
     }
@@ -322,8 +354,14 @@
     }
 }
 @media (max-width:600px) {
+    .single-post.articles  {
+        background: none;
+        .navmenu .header__link-back .link-back{
+            color: #0460A9;
+        }
+    }
     .single-header.articles {
-        padding-top: 120px;
+        padding-top: 60px;
     }
     .recommendations__title {
         text-align: left;
@@ -381,5 +419,29 @@
                 bottom: 0px;
             }
         }
+    }
+}
+
+@media (max-width: 550px) {
+    .single-post.articles-post .kt-tabs-title-list {
+        top: -40px;
+        min-height: 45px;
+        .slick-list {
+            margin-bottom: -3px;
+        }
+        .slick-track {
+            display: flex;
+            align-items: end;
+        }
+    }
+    .single-post.articles-post .kt-tabs-title-list .kt-title-item {
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+    .single-post.articles-post .kt-tabs-title-list .kt-title-item a {
+        display: flex;
+        justify-content: center;
     }
 }

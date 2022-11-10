@@ -24,6 +24,9 @@
                 }
             }
         }
+        .archive-link {
+            display: none;
+        }
         .post__count {
             font-size: 16px;
             line-height: 24px;
@@ -63,6 +66,28 @@
     }
     .podcasts-header {
         background: #BDF3FD;
+    }
+    .podcasts-header .page-header__block .page-header__box {
+        flex-wrap: nowrap;
+        .btn-open-search {
+            width: auto !important;
+            min-width: 125px;
+        }
+    }
+    .podcasts-header .page-header__block .page-header__box .page-header__filter .filter__modal {
+        .filter__body {
+            display: none;
+        }
+        .taxs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .tax__btn {
+                width: 40%;
+                margin: 0 auto 15px;
+                @include shadow-hover-btn;
+            }
+        }
     }
     .podcasts__posts {
         background: linear-gradient(180deg, #BDF3FD 0%, #F6FAD6 49.47%);
@@ -113,6 +138,13 @@
                     }
                 }
             }
+        }
+    }
+}
+@media (max-width:600px) {
+    .podcasts-header {
+        .page-header__search.active {
+            top: 120px;
         }
     }
 }
@@ -167,6 +199,7 @@
                 .box-btn {
                     display: flex;
                     .play__podcast {
+                        cursor: pointer;
                         background: #EC9A1E;
                         height: 40px;
                         width: 160px;
@@ -180,7 +213,8 @@
                             margin-left: 15px;
                         }
                     }
-                    .share {
+                    .share-btn {
+                        cursor: pointer;
                         background: #C4C4C4;
                         height: 40px;
                         width: 160px;
@@ -191,6 +225,74 @@
                         color: #FFFFFF;
                         img {
                             margin-left: 15px;
+                        }
+                    }
+                    .share {
+                        display: none;
+                        .tooltip {
+                            position: relative;
+                            display: inline-block;
+                        }
+                        
+                        .tooltip .tooltiptext {
+                            visibility: hidden;
+                            width: 140px;
+                            background-color: #555;
+                            color: #fff;
+                            text-align: center;
+                            border-radius: 6px;
+                            padding: 5px;
+                            position: absolute;
+                            z-index: 1;
+                            bottom: 150%;
+                            right: 100%;
+                            opacity: 0;
+                            transition: opacity 0.3s;
+                        }
+                        
+                        .tooltip .tooltiptext::after {
+                            content: "";
+                            position: absolute;
+                            top: 100%;
+                            left: 50%;
+                            margin-left: -5px;
+                            border-width: 5px;
+                            border-style: solid;
+                            border-color: #555 transparent transparent transparent;
+                        }
+                        
+                        .tooltip:hover .tooltiptext {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                    &.active {
+                        position: relative;
+                        .share {
+                            display: flex;
+                            position: absolute;
+                            top: 0px;
+                            background:#858484;
+                            padding: 5px;
+                            height: 40px;
+                            z-index: 10;
+                            border-radius: 5px;
+                            right: 0;
+                            input {
+                                border: none;
+                                outline: none;
+                            }
+                            .tooltip {
+                                .copy {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    height: 100%;
+                                    img {
+                                        height: 100%;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -227,12 +329,12 @@
 }
 .single__podcasts {
     background: linear-gradient(180deg, #BAF3FF 0%, #FAFBD3 100%);
-    .home__podcasts-posts {
+    .podcasts-posts {
         background: #FFFFFF;
         box-shadow: 0px 34px 30px rgba(144, 202, 181, 0.15);
         padding: 16px 25px;
         min-height: 800px;
-        .home__podcasts-post {
+        .player {
             border-top: none;
             border-bottom: 1px solid #E4DCDC;
             .number {
@@ -241,11 +343,6 @@
                 font-family: $font-family-bold;
                 color: #202F4E; 
                 margin-right: 10px;
-            }
-            .post-main a.title {
-                .number {
-                    display: none;
-                }
             }
         }
     }

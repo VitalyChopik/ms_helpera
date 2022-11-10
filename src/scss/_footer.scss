@@ -46,41 +46,60 @@
             .send-box {
                 padding-top: 3px;
                 
-                form {
-                    display: flex;
-                    margin-bottom: 3px;
-                    input {
-                        background: $text-white;
-                        border:none;
-                        max-width: 215px;
-                        width: 100%;
-                        height: 40px;
-                        padding: 12px 14px;
-                        font-size: 12px;
-                        line-height: 135%;
+                form.wpcf7-form {
+                    position: relative;
+                    p {
                         display: flex;
-                        align-items: center;
-                        color: #9C9C9C;
-                        outline: 0;
-                        &::placeholder {
+                        margin-bottom: 3px;
+                        span.wpcf7-form-control-wrap {
+                            .wpcf7-not-valid-tip {
+                                display: none;
+                            }
+                        }
+                        input.wpcf7-email {
+                            background: $text-white;
+                            border:none;
+                            max-width: 215px;
+                            width: 100%;
+                            height: 40px;
+                            padding: 12px 14px;
+                            font-size: 12px;
+                            line-height: 135%;
+                            display: flex;
+                            align-items: center;
                             color: #9C9C9C;
+                            outline: 0;
+                            &::placeholder {
+                                color: #9C9C9C;
+                            }
+                        }
+                        input.wpcf7-submit {
+                            border: none;
+                            background: $blue-active;
+                            max-width: 95px;
+                            width: 100%;
+                            height: 40px;
+                            color: $text-white;
+                            font-size: 12px;
+                            line-height: 135%;
+                            &:hover {
+                                @include shadow-hover-btn;
+                                @include shadow-active-btn;
+                            }
                         }
                     }
-                    button {
-                        border: none;
-                        background: $blue-active;
-                        max-width: 95px;
-                        width: 100%;
-                        height: 40px;
-                        color: $text-white;
-                        font-size: 12px;
-                        line-height: 135%;
-                        &:hover {
-                            @include shadow-hover-btn;
-                            @include shadow-active-btn;
-                        }
-                    }
+
+                    
                 }
+                .wpcf7 form.sent .wpcf7-response-output,  .wpcf7 form.invalid .wpcf7-response-output {
+                    position: absolute;
+                    top: 0;
+                    background: #ffffff;
+                    margin: 0;
+                    color: #202f4e;
+                }
+
+               
                 p {
                     font-family: $font-family-Light;
                     font-size: 8px;
@@ -120,6 +139,8 @@
             text-decoration: underline;
             font-size: 11px;
             line-height: 10px;
+            background: none;
+            padding: 0 !important;
         }
 
     }
@@ -193,6 +214,9 @@
     }
 }
 @media (max-width:767px) {
+    .wpcf7-spinner {
+        display: none !important; 
+    }
     .footer .footer__block .adress {
         display: none;
     }
@@ -216,16 +240,24 @@
                 }
             }
             .send-box {
-                form {
-                    display: block;
-                    input {
-                        margin: 0 auto 15px;
-                        max-width: 280px;
+                form.wpcf7-form {
+                    p {
+                        display: block;
+                        input.wpcf7-email {
+                            margin: 0 auto 15px;
+                            max-width: 280px;
+                        }
+                        input.wpcf7-submit {
+                            border-radius: 0 10px 10px 10px;
+                            min-width: 140px;
+                            margin-bottom: 20px;
+                        }
+                        .wpcf7-spinner {
+                            display: none !important;
+                        }
                     }
-                    button {
-                        border-radius: 0 10px 10px 10px;
-                        min-width: 140px;
-                        margin-bottom: 20px;
+                    .wpcf7-spinner {
+                        display: none !important;
                     }
                 }
                 p {

@@ -88,10 +88,12 @@
             width: 100%;
             display: flex;
             align-items: end;
+            outline: none;
             .box-bg {
                 position: absolute;
                 top: 0;
-                left: 0;
+                left: -2px;
+                right: 0;
                 min-width: 100%;
                 height: 100%;
                 z-index: 0;
@@ -185,6 +187,7 @@
         .home__events-post {
             display: flex;
             margin-bottom: 30px;
+            outline: none;
             .timedate {
                 max-width: 22.77%;
                 width: 100%;
@@ -281,6 +284,7 @@
                     width: 193px;
                     text-decoration: none;
                     @include btn-remember;
+                    cursor: pointer;
                 }
             }
         }
@@ -300,6 +304,7 @@
             width: 33%;
             display: flex;
             flex-direction: column;
+            outline: none;
             .box-img {
                 position: relative;
                 width: 100%;
@@ -369,6 +374,7 @@
             flex-direction: column;
             background: #FFFFFF;
             border-radius: 0 0 20px 0;
+            outline: none;
             &:hover {
                 filter: drop-shadow(0px 15px 47px #5379F9);
             }
@@ -434,6 +440,7 @@
         flex-direction: column;
         background: #FFFFFF;
         border-radius: 0 0 20px 0;
+        outline: none;
         &:hover {
             filter: drop-shadow(0px 15px 47px #5379F9);
         }
@@ -506,6 +513,7 @@
             padding: 15px 0;
             border-top:  1px solid #E4DCDC;
             display: flex;
+            outline: none;
             &:last-child {
                 border-bottom:  1px solid #E4DCDC;
             }
@@ -581,6 +589,9 @@
 .cookies-section {
     background: $text-white;
     padding-bottom: 125px;
+    &.d-none {
+        display: none !important;
+    }
 }
 .cookies {
     background: #DF6449;
@@ -768,6 +779,7 @@
                         order: 4;
                         align-items: end;
                         margin-bottom: 0;
+                        margin-top: 20px;
                         .tag, .tax {
                             border-radius: 15px 0 15px 15px;
                             padding:0 15px;
@@ -780,12 +792,14 @@
                             min-width: 0;
                             margin-right: 0;
                             margin-bottom: 6px;
+                            margin-left: auto;
                         }
                         a.tax {
                             font-size: 12px;
                             line-height: 25px;
                             background: #0460A9;
                             color: #FFFFFF;
+                            margin-left: auto;
                         }
                     }
                     .title-block {
@@ -918,6 +932,8 @@
                         color: #F6404F;
                         font-size: 16px;
                         line-height: 135%;
+                        margin-left: auto;
+                        background: none !important;
                     }
                     img {
                         display: none;
@@ -1014,7 +1030,7 @@
                             display: flex;
                             background: #E74A21;
                             width: 100%;
-                            padding: 0 20px 10px;
+                            padding: 0 10px 10px;
                             font-size: 16px;
                             line-height: 24px;
                             color: #FFFFFF; 
@@ -1025,7 +1041,7 @@
                         a.excerpt {
                             display: flex;
                             width: 100%;
-                            padding:0 20px;
+                            padding:0 7px;
                             br {
                                 display: none;
                             }
@@ -1040,6 +1056,7 @@
                     justify-content: space-between;
                     padding-right: 0;
                     padding-bottom: 0;
+                    padding-left: 7px;
                     .date {
                         font-size: 12px;
                         line-height: 25px;
@@ -1052,7 +1069,7 @@
                         display: block;
                         @include btn-remember;
                         width: max-content;
-                        padding: 4px 28px;
+                        padding: 4px 7px;
                         border-radius: 20px 0 10px 20px;
                         font-size: 12px;
                         line-height: 25px;
@@ -1125,44 +1142,7 @@
                 padding:0 27% 0 0 !important;
                 width: 100%;
             }
-            .home__podcasts-post {
-                padding: 0;
-                margin-right: 14px;
-                border-radius: 10px;
-                flex-direction: column;
-                background: #FFFFFF;
-                
-                border: none;
-                &:last-child {
-                    border: none;
-                }
-                .thumbnail {
-                    border-radius: 10px 10px 0 0 ;
-                    width: 100%;
-                    height: auto;
-                   padding: 25px 0;
-                    img {
-                        width: auto;
-                        min-height: 80px;
-                    }
-                }
-                .post-main {
-                    background: #FFFFFF;
-                    padding: 25px;
-                    border-radius: 0 0 10px 10px;
-                    a.title {
-                        font-size: 15px;
-                        line-height: 30px;
-                    }
-                    p.excerpt {
-                        font-size: 13px;
-                        line-height: 18px;
-                    }
-                    .audio {
-                        display: none;
-                    }
-                }
-            }
+
             .slick-dots {
                 margin: 0;
                 padding: 0;

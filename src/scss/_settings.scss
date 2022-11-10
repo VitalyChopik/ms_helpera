@@ -47,7 +47,7 @@ img {
     font-size: 16px;
     line-height: 135%;
 }
-h1, h2, h3, h4, h5, h6, strong {
+h1, h2, h3, h4, h5, h6{
     font-family: $font-family-bold;
     color: #202F4E;
 }
@@ -178,10 +178,114 @@ a {
                             min-width: 93px;
                             margin-top: 6px;
                         }
-                        .calendar {
+                        .range {
                             width: 204px;
                             margin-right: 46px;
                             filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.1));
+                            .pickmeup {
+                                width: 100%;
+                                background: #FFFFFF;
+                                .pmu-instance {
+                                    height: auto;
+                                    width: 100%;
+                                    padding: 0;
+                                    nav {
+                                        .pmu-month.pmu-button {
+                                            padding: 6px 0;
+                                            font-size: 10px;
+                                            line-height: 135%;
+                                            display: flex;
+                                            align-items: center;
+                                            text-align: center;
+                                            color: #202F4E;
+                                            width: auto;
+                                            margin: 0 auto;
+                                        }
+                                        .pmu-prev.pmu-button {
+                                            display: flex;
+                                            margin-left: 20px;
+                                            img {
+                                                display: none !important;
+                                            }
+                                            &::after {
+                                                content: "<";
+                                                font-size: 10px;
+                                                line-height: 135%;
+                                                display: flex;
+                                                align-items: center;
+                                                text-align: center;
+                                                color: #202F4E;
+                                            }
+                                        }
+                                        .pmu-next.pmu-button {
+                                            display: flex;
+                                            justify-content: end;
+                                            margin-right: 20px;
+                                            img {
+                                                display: none !important;
+                                            }
+                                            &::after {
+                                                content: ">";
+                                                font-size: 10px;
+                                                line-height: 135%;
+                                                display: flex;
+                                                align-items: center;
+                                                text-align: center;
+                                                color: #202F4E;
+                                            }
+                                        }
+                                    }
+                                    .pmu-day-of-week {
+                                        background: #0460A9;
+                                        padding: 6px 20px;
+                                        justify-content: space-between;
+                                        div {
+                                            font-size: 10px;
+                                            line-height: 135%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            color: #FFFFFF;
+                                            width: 22.5px;
+                                            height: 22.5px;
+                                        }
+                                    }
+                                    .pmu-days {
+                                        padding: 10px 20px;
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        justify-content: space-between;
+                                        // в этом месяце
+                                        .pmu-button {
+                                            width: 22.5px;
+                                            height: 22.5px;
+                                            font-size: 10px;
+                                            line-height: 135%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            color: #202F4E;  
+                                        }
+                                        //не в этом месяце
+                                        .pmu-not-in-month {
+                                            opacity: 0.2;
+                                        }
+                                        //выбрано
+                                        .pmu-selected {
+                                            background: #E3F0F1;
+                                            mix-blend-mode: multiply;
+                                            color: #202F4E;
+                                            opacity: 1;
+                                        }
+                                        .pmu-today {
+                                            background: #E3F0F1;
+                                            mix-blend-mode: multiply;
+                                            color: #202F4E;
+                                            opacity: 1;
+                                        }
+                                    }
+                                }
+                            }
                         }
                         .filter__block {
                             display: flex;
@@ -346,20 +450,27 @@ a {
         color: $text-main;
     }
 }
+.taxs {
+    display: none;
+}
 .pagination__block {
+    display: flex;
+    justify-content: space-between;
     .d-flex {
         justify-content: space-between;
-        .top__up {
-            cursor: pointer;
-            @include btn-up;
-            width: 95px;
-            height: 40px;
-        }
+
+    }
+    .top__up {
+        cursor: pointer;
+        @include btn-up;
+        width: 95px;
+        height: 40px;
     }
     .pagination {
         margin-bottom: 97px;
+        display: flex;
         .nav-links {
-
+            display: flex;
             .page-numbers {
                 @include flex-center;
                 width: 45px;
@@ -394,7 +505,9 @@ a {
         }
     }
 }
-
+.page-search-pagination {
+    padding-bottom: 50px;
+}
 @media (max-width: 1300px) {
     .page-header__block .page-header__box .page-header__filter .filter__modal.active {
         max-width: min-content;
@@ -427,6 +540,9 @@ a {
     .page-header__block .link-back {
         display: none;
     }
+    .cases-header .container .cases-header {
+        padding: 0 !important;
+    }
 } 
 @media (max-width: 830px) {
     .page-header__block .page-header__box .page-header__filter .filter__modal.active {
@@ -443,11 +559,18 @@ a {
         width: 100%;
         margin-bottom: 10px;
     }
+    .page-header__block .page-header__box .page-header__filter .filter__modal.active .filter__body .calendar {
+        display: flex;
+        justify-content: center;
+    }
 }
 @media (max-width: 600px) {
     .news-header {
         background: linear-gradient(180deg, #202F4E 0%, #011642 100%);
         margin-top: -2px;
+    }
+    .container {
+        padding: 0 15px;
     }
     .page-header__block {
         padding: 10px 0 75px 13px;
@@ -518,11 +641,10 @@ a {
             left: 0;
             bottom: 0;
             right: 0;
-            top: 10px;
+            top: 2px;
             height: 42px;
-            margin: 0;
+            margin: 0 auto;
             max-width: 100%;
-            margin-left: auto;
             z-index: 100;
             input, button {
                 height: 42px;
@@ -550,12 +672,12 @@ a {
                     width: 12px;
                     height: 12px;
                 }
-                display: flex;
+                display: flex !important;
                 align-items: center;
                 position: absolute;
                 bottom: 0;
                 top: 0;
-                right: 105px;
+                right: 120px;
                 z-index: 200;
             }
         }
@@ -585,12 +707,12 @@ a {
         line-height: 135%;
         margin-bottom: 12px;
     }
-    .page-header__block .page-header__box .page-header__filter .filter__modal.active .filter__body .calendar {
-        width: 100%;
+    .page-header__block .page-header__box .page-header__filter .filter__modal.active .filter__body .range {
+        margin-right: 0;
     }
     .page-header__block .page-header__box .page-header__filter .filter__modal.active .filter__body .filter__block .category__list {
         justify-content: flex-start;
-        margin-bottom: 19px;
+        margin-bottom: 10px;
     }
     .page-header__block .page-header__box .page-header__filter .filter__modal.active .filter__body .filter__block .category__list .box label span {
         font-size: 16px;
@@ -601,8 +723,8 @@ a {
         align-items: center;
     }
     .page-header__block .page-header__box .page-header__filter .filter__modal.active .filter__body .filter__block .category__list .filter__box {
-        min-width: 120px;
-        width: auto;
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
 
